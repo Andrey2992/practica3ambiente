@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; margin: 20px;
+ }
+ .container {
+ max-width: 500px; 
+ margin: 0 auto; 
+}
+.info {
+    background: #e8f4f8;
+    padding: 10px; 
+    border-radius: 4px;
+    margin: 10px 0; 
+    }
