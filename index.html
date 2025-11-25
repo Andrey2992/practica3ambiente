@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <title>Conversor de Moneda</title>
+  </head>
+  <body>
+    <!-- navbar ( parte de arriba )-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <b>Conversor de monedas</b>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="#"> Inicio </a>
+            <a class="navbar-item" href="#"> Acerca de </a>
+            <a class="navbar-item" href="#"> Contacto </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero is-medium is-bold hero-gris">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Conversor de Monedas</h1>
+      <h2 class="subtitle">
+        Convierte entre diferentes monedas usando tasas de cambio
+        actualizadas, fácil y rápido.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Main -->
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">Convertidor de monedas</p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <!-- Moneda (que quiere poner) -->
+                  <div class="field is-horizontal">
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <div class="select is-fullwidth">
+                            <select id="moneda-uno">
+                              <option value="USD" selected>
+                                USD - Dolar Estadounidense
+                              </option>
+                              <option value="EUR">EUR - Euro</option>
+                              <option value="CRC">
+                                CRC - Colón Costarricense
+                              </option>
+                              <option value="MXN">MXN - Peso Mexicano</option>
+                              <option value="BRL">BRL - Real Brasileño</option>
+                              <option value="CAD">
+                                CAD - Dólar Canadiense
+                              </option>
+                              <option value="COP">COP - Peso Colombiano</option>
+                              <option value="ARS">ARS - Peso Argentino</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="control">
+                          <input
+                            class="input"
+                            type="number"
+                            id="cantidad-uno"
+                            placeholder="0"
+                            value="1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Cambiar(es el de cambiar a la moneda de arriba por la de abajo) -->
+                  <div class="field">
+                    <div class="control has-text-centered">
+                      <button class="button is-primary" id="taza">
+                        Cambiar
+                      </button>
+                      <p class="help has-text-centered mt-2">
+                        <span id="cambio" class="has-text-weight-bold"
+                          >Cargando...</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Moneda (destino) -->
+                  <div class="field is-horizontal">
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <div class="select is-fullwidth">
+                            <select id="moneda-dos">
+                              <option value="USD">
+                                USD - Dólar Estadounidense
+                              </option>
+                              <option value="EUR" selected>EUR - Euro</option>
+                              <option value="CRC">
+                                CRC - Colón Costarricense
+                              </option>
+                              <option value="MXN">MXN - Peso Mexicano</option>
+                              <option value="BRL">BRL - Real Brasileño</option>
+                              <option value="CAD">
+                                CAD - Dólar Canadiense
+                              </option>
+                              <option value="COP">COP - Peso Colombiano</option>
+                              <option value="ARS">ARS - Peso Argentino</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="control">
+                          <input
+                            class="input"
+                            type="number"
+                            id="cantidad-dos"
+                            placeholder="0"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Error (mensaje) -->
+                  <div
+                    id="error-message"
+                    class="notification is-danger"
+                    style="display: none"
+                  >
+                    <button class="delete"></button>
+                    <span id="error-text"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>2025 - Andrey Sanchez</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
