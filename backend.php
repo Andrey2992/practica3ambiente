@@ -13,22 +13,22 @@ $tasas = array(
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-//este es para obtener  los datos del formulario
+//este es para obtener los datos del formulario
     $moneda_origen = isset($_POST['moneda_origen']) ? $_POST['moneda_origen'] : null;
     $moneda_destino = isset($_POST['moneda_destino']) ? $_POST['moneda_destino'] : null;
     $cantidad = isset($_POST['cantidad']) ? floatval($_POST['cantidad']) : 1;
 
-    // se confirma que esteban las monedas en el array
+    // es para confirmar que las monedas son buenas o estan aprobadas
     if (array_key_exists($moneda_origen, $tasas) && array_key_exists($moneda_destino, $tasas)) {
-        // Calcular la tasa de cambio
+        //tasa de cambio
         $tasa_origen = $tasas[$moneda_origen];
         $tasa_destino = $tasas[$moneda_destino];
         $tasa_cambio = $tasa_destino / $tasa_origen;
 
-        //se calcula el monto
+        //calcula el monto
         $monto_convertido = $cantidad * $tasa_cambio;
 
-        // aqui se responden con json
+        //devuelve en este caso el json
         header('Content-Type: application/json');
         echo json_encode(array(
             'exito' => true,
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'moneda_destino' => $moneda_destino
         ));
     } else {
-        // Error: moneda no válida
+        //muestra error que la moneada no es valida
         header('Content-Type: application/json');
         http_response_code(400);
         echo json_encode(array(
@@ -74,4 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </body>
+
+<script src="script.js"></script>
 </html>
