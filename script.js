@@ -1,6 +1,6 @@
 
-const monedaUno = document.getElementById('moneda-uno');
-const monedaDos = document.getElementById('moneda-dos');
+const monedaUno = document.getElementById('moneda-uno');//dolar
+const monedaDos = document.getElementById('moneda-dos');//colones
 const cantidadUno = document.getElementById('cantidad-uno');
 const cantidadDos = document.getElementById('cantidad-dos');
 const cambioEl = document.getElementById('cambio');
